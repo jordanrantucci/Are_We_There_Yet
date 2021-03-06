@@ -1,6 +1,9 @@
 const express = require('express');
+const session = require("express-session");
+const passport = require("./config/passport");
 
 const PORT = process.env.PORT || 8080;
+const db = require("./models");
 
 const app = express();
 
@@ -17,12 +20,20 @@ const exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-// Import routes and give the server access to them.
-const routes = require('./controllers/burgersController.js');
+// We need session to keep track of user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use(routes);
+// Import routes and give the server access to them. we will need to create additional routes
+require('./controllers/burgersController.js')(app);
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
+
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, () =>
-  console.log(`Server listening on: http://localhost:${PORT}`)
-);
+db.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  });
+});
