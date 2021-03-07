@@ -17,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/jordanrantucci/Are_We_There_Yet/issues"
   },
-  "homepage": "https://github.com/jordanrantucci/Are_We_There_Yet#readme"
+  "homepage": "https://github.com/jordanrantucci/Are_We_There_Yet#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.5.0"
+  }
 }
