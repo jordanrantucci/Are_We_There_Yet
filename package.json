@@ -1,5 +1,5 @@
 {
-  "name": "mvc_design",
+  "name": "Are_We_There_Yet",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -7,28 +7,26 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanrantucci/Are_We_There_Yet.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanrantucci/Are_We_There_Yet/issues"
+  },
+  "homepage": "https://github.com/jordanrantucci/Are_We_There_Yet#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
     "express-session": "^1.17.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^6.5.0"
-  },
-  "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jordanrantucci/Eat_Da_Burger.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jordanrantucci/Eat_Da_Burger/issues"
-  },
-  "homepage": "https://github.com/jordanrantucci/Eat_Da_Burger#readme"
+
+  }
+
 }

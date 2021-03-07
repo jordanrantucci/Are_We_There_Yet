@@ -1,6 +1,3 @@
-INSERT INTO burgers (name) VALUES ('Cheese');
-INSERT INTO burgers (name) VALUES ('Double');
-INSERT INTO burgers (name, devour) VALUES ('Bacon', true);
-INSERT INTO burgers (name, devour) VALUES ('Veggie', true);
-INSERT INTO burgers (name, devour) VALUES ('Chicken Burger', true);
-INSERT INTO burgers (name) VALUES ('BBQ Burger');
+INSERT INTO trips (trip_name) VALUES ('weekend roadtrip');
+INSERT INTO locations (city_name, trips_id) VALUES ('Cleveland', 1);
+INSERT INTO users (name, trips_id) VALUES ('Jordan', 1), ('Diane', 1), ('Amber', 1), ('Nick', 1);
