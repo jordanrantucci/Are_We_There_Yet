@@ -1,32 +1,23 @@
 {
-  "name": "Are_We_There_Yet",
+  "name": "1-Passport-Example",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jordanrantucci/Are_We_There_Yet.git"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jordanrantucci/Are_We_There_Yet/issues"
-  },
-  "homepage": "https://github.com/jordanrantucci/Are_We_There_Yet#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.2.5",
-    "passport": "^0.4.1",
+    "bcryptjs": "2.4.3",
+    "express": "^4.17.0",
+    "express-session": "^1.16.1",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^6.5.0"
-
+    "sequelize": "^5.8.6"
   }
-
 }
