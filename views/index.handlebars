@@ -1,57 +1,27 @@
-<h1 class="mainHeader">Eat Da Burger!</h1>
-
-<br>
-<br>
-<br>
-
-<div class="row topRow">
-
-    <div class="col-1">
+ {{!-- <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
     </div>
-    <div class="col-4 noDevoured">
-      <br>
-      <h2>Hamburgers available<br>to devour:</h2>
-      
-        {{#each burgers}}
-        {{#unless devour}}
-        {{> burgers/burger-block devour=true}}
-        {{/unless}}
-        {{/each}}
-      
-   
-  </div>
-  <div class="col-2">
-    <img id="burgerPic" src="\assets\css\burger.png" alt="burger clipart">
-  </div>
-  
-    <div class="col-4 yesDevoured">
-      <br>
-      <h2>Devoured<br>burgers:</h2>
-      
-        {{#each burgers}}
-        {{#if devour}}
-        {{> burgers/burger-block devour=false}}
-        {{/if}}
-        {{/each}}
-      
+  </nav>
+  <div class="container">
+    <p>Are We There Yet?</p>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Login Form</h2>
+        <form class="login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+        <br />
+        <p>Or sign up <a href="/">here</a></p>
+      </div>
     </div>
-    <div class="col-1">
-    </div>
-</div>
-
-<br>
-<br>
-
-<div class="makeBurgerForm">
-  <h2>Make a Burger</h2>
-
-  <form id="create-form">
-
-    <div class="form-group">
-      <label for="ca">Burger Name:</label>
-      <input type="text" id="ca" name="name">
-    </div>
-
-    <button type="submit">Add Burger</button>
-  </form>
-</div>
+  </div> --}}
