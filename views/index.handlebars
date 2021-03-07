@@ -1,0 +1,57 @@
+<h1 class="mainHeader">Eat Da Burger!</h1>
+
+<br>
+<br>
+<br>
+
+<div class="row topRow">
+
+    <div class="col-1">
+    </div>
+    <div class="col-4 noDevoured">
+      <br>
+      <h2>Hamburgers available<br>to devour:</h2>
+      
+        {{#each burgers}}
+        {{#unless devour}}
+        {{> burgers/burger-block devour=true}}
+        {{/unless}}
+        {{/each}}
+      
+   
+  </div>
+  <div class="col-2">
+    <img id="burgerPic" src="\assets\css\burger.png" alt="burger clipart">
+  </div>
+  
+    <div class="col-4 yesDevoured">
+      <br>
+      <h2>Devoured<br>burgers:</h2>
+      
+        {{#each burgers}}
+        {{#if devour}}
+        {{> burgers/burger-block devour=false}}
+        {{/if}}
+        {{/each}}
+      
+    </div>
+    <div class="col-1">
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="makeBurgerForm">
+  <h2>Make a Burger</h2>
+
+  <form id="create-form">
+
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="ca" name="name">
+    </div>
+
+    <button type="submit">Add Burger</button>
+  </form>
+</div>
