@@ -2,26 +2,30 @@
 // var path = require("path");
 
 
-const indexModel = require('../models/index.js')
-const userModel = require('../models/user.js')
+const models = require("../models")
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+const apiRoutes = require("./api-routes");
 
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
+    console.log("html-apiRoutes.js line 14")
     if (req.user) {
-      res.redirect("/members");
+      console.log("html-routes.js line 16")
+      // res.redirect("/members");
     }
     // res.sendFile(path.join(__dirname, "login"));
     res.render('partials/login')
   });
 
   app.get("/login", function(req, res) {
+    console.log("html-routes.js line 24")
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      // res.redirect("/members");
+      console.log("html-routes line 28")
     }
     // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render('partials/login')
@@ -30,11 +34,13 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
+    console.log("html-routes.js line 37")
     // res.sendFile(path.join(__dirname, "../public/members.html"));
     res.render('partials/members')
   });
 
   app.get("/signup", function(req, res) {
+    console.log("html-routes.js line 43")
     res.render('partials/signup')
   })
 };

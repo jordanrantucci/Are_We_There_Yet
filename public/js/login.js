@@ -6,6 +6,7 @@ $(document).ready(function() {
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", function(event) {
+    console.log("login.js line 9")
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
@@ -13,22 +14,26 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
+      console.log("Email and/or password is incorrect.")
       return;
     }
 
     // If we have an email and password we run the loginUser function and clear the form
     loginUser(userData.email, userData.password);
+    console.log("login.js line 23")
     emailInput.val("");
     passwordInput.val("");
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
+    console.log("login.js line 30")
     $.post("/api/login", {
       email: email,
       password: password
     })
       .then(function() {
+        console.log("login.js line 36")
         window.location.replace("/members");
         // If there's an error, log the error
       })
