@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-  <ul>
+  {{!-- <ul>
   {{#each posts}}
   <li>
     <p><span class="label">ID:</span> {{this.id}}</p>
@@ -26,43 +26,50 @@
     <a href="/{{this.id}}">Update this quote</a>
   </li>
   {{/each}}
-</ul>
+</ul> --}}
 
-<h2>Make a New Trip</h2>
 
-<form id="create-form">
-
-  <div class="form-group">
-    <label for="auth">People_id:</label>
-    <input type="text" id="auth" name="author">
-  </div>
-
-  <div class="form-group">
-    <label for="quo">Body:</label>
-    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
-  </div>
-
-    <div>
-      <button type="button" class="btn btn-success">View Trip</button>
-    </div>
-
-{{#each trips}}
+{{!-- {{#each trips}} --}}
   <div class="card" style="width: 18rem;">
     <div class="card-header">
-      Trip Name{{this.trip.name}}
+      Trip Name: {{trips.trip_name}}
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">People: {{this.people.name}}</li>
-      <li class="list-group-item">Starting Location: {{this.city_name}}</li>
+      {{!-- <li class="list-group-item">People: {{this.people.name}}</li>
+      <li class="list-group-item">Starting Location: {{this.city_name}}</li> --}}
       <li class="list-group-item">Activites</li>
       <li class="list-group-item">Ending location</li>
     </ul>
   </div>
-  {{/each}}
+  {{!-- {{/each}} --}}
 
+<h2>Make a New Trip</h2>
+
+<form id="create-form" action="/api/trip" method="POST">
+
+  {{!-- <div class="form-group">
+    <label for="auth">People_id:</label>
+    <input type="text" id="auth" name="author">
+  </div> --}}
+{{!-- 
+  <div class="form-group">
+    <label for="quo">Body:</label>
+    <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
+  </div> --}}
+
+    <div class="form-group">
+    <label for="auth">Trip Name:</label>
+    <input type="text" id="trip_name" name="trip_name">
+  </div>
+
+    {{!-- <div>
+      <button type="button" class="btn btn-success">View Trip</button>
+    </div>
+
+ --}}
 
   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-    <button type="button" class="btn btn-info">Create a Trip</button>
+    <button type="submit" class="btn btn-info">Create a Trip</button>
   </div>
 
 

@@ -14,17 +14,24 @@ module.exports = function(app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
+  // Added name 
   app.post("/api/signup", function(req, res) {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
-      .then(function() {
-        res.redirect(307, "/api/login");
+    
+    db.people.create({
+      name: req.body.name
+    }).then(function(createdPeople) {
+      db.User.create({
+        email: req.body.email,
+        password: req.body.password,
+        people_id: createdPeople.id
       })
-      .catch(function(err) {
-        res.status(401).json(err);
-      });
+        .then(function(createdUser) {
+          res.redirect(307, "/api/login");
+        })
+        .catch(function(err) {
+          res.status(401).json(err);
+        });
+    })
   });
 
   // Route for logging user out
@@ -44,8 +51,33 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        people_id: req.user.people_id //this is a foreign key referencing the 'people' table- shows up as null. correct syntax for this?
+        people_id: req.user.people_id,
+        trips_id: req.user.trips_id //this is a foreign key referencing the 'people' table- shows up as null. correct syntax for this?
       });
     }
   });
+
+  app.get("/api/trip", function(req, res) {
+    db.trips.findOne({
+      where: {id: req.user.trips_id}
+    }).then(function(result) {
+      res.json(result)
+    }) 
+  })
+
+  app.post("/api/trip", function(req, res) {
+    db.trips.create({
+      trip_name: req.body.trip_name,
+    }).then(function(createdTrip) {
+      console.log(db.users)
+      db.User.update({
+        trips_id: createdTrip.id
+      },
+      {
+        where: {id: req.user.id}
+      }).then(function() {
+            res.redirect("/mytrips");
+          })
+    })
+  })
 };
