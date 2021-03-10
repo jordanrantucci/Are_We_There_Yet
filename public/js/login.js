@@ -34,7 +34,7 @@ $(document).ready(function() {
     })
       .then(function() {
         console.log("login.js line 36")
-        window.location.replace("/members");
+        window.location.replace("/mytrips");
         // If there's an error, log the error
       })
       .catch(function(err) {
