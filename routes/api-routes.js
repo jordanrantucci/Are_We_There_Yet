@@ -20,7 +20,6 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
-        console.log("api-routes.js line 24")
         res.redirect(307, "/api/login");
       })
       .catch(function(err) {
@@ -44,8 +43,8 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
-
+        id: req.user.id,
+        people_id: req.user.people_id //this is a foreign key referencing the 'people' table- shows up as null. correct syntax for this?
       });
     }
   });

@@ -49,11 +49,11 @@
 {{#each trips}}
   <div class="card" style="width: 18rem;">
     <div class="card-header">
-      Trip Name{{this.city_name}}
+      Trip Name{{this.trip.name}}
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{this.people.name}}Who is going</li>
-      <li class="list-group-item">{{this.city_name}}Starting Location</li>
+      <li class="list-group-item">People: {{this.people.name}}</li>
+      <li class="list-group-item">Starting Location: {{this.city_name}}</li>
       <li class="list-group-item">Activites</li>
       <li class="list-group-item">Ending location</li>
     </ul>

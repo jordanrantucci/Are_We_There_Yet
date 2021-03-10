@@ -1,6 +1,6 @@
-// Creating our Location model
+// Creating our People model
 module.exports = function(sequelize, DataTypes) {
-    var Location = sequelize.define("Location", {
+    var People = sequelize.define("People", {
       // The email cannot be null, and must be a proper email before creation
       id: {
           type: DataTypes.INTEGER,
@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
           autoIncrement: true,
           primaryKey: true
       },
-      city_name: {
+      name: {
           type: DataTypes.STRING(255),
           allowNull: false,
       },
@@ -20,6 +20,6 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     });
-    return Location;
+    return People;
   };
   
