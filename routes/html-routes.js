@@ -2,7 +2,7 @@
 // var path = require("path");
 
 
-const models = require("../models")
+const db = require("../models")
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 const apiRoutes = require("./api-routes");

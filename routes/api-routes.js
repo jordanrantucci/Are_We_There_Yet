@@ -20,7 +20,6 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
-        console.log("api-routes.js line 24")
         res.redirect(307, "/api/login");
       })
       .catch(function(err) {

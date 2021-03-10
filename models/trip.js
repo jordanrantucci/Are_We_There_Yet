@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         primaryKey: true
     },
     trip_name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(255),
         allowNull: false,
     }
   });
