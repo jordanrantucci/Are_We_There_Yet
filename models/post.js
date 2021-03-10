@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         body: {
             type: DataTypes.STRING(255)
         },
-        peoples_id: {
+        people_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'People',
