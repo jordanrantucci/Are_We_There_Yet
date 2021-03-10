@@ -42,27 +42,29 @@
     <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
   </div>
 
-{{#Each}}
+    <div>
+      <button type="button" class="btn btn-success">View Trip</button>
+    </div>
+
+{{#each trips}}
   <div class="card" style="width: 18rem;">
     <div class="card-header">
-      Trip Location{{data.trips.trip_name}}
+      Trip Name{{this.city_name}}
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{data.people.name}}Who is going</li>
-      <li class="list-group-item">Starting Location</li>
+      <li class="list-group-item">{{this.people.name}}Who is going</li>
+      <li class="list-group-item">{{this.city_name}}Starting Location</li>
       <li class="list-group-item">Activites</li>
       <li class="list-group-item">Ending location</li>
     </ul>
   </div>
-  {{/Each}}
+  {{/each}}
 
 
   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
     <button type="button" class="btn btn-info">Create a Trip</button>
-    <button type="button" class="btn btn-success">View My Trips</button>
   </div>
 
-  <button type="submit">Add Trip</button>
 </form>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
