@@ -4,15 +4,6 @@ CREATE DATABASE awty_db;
 
 USE awty_db;
 
-
-CREATE TABLE user 
-(
-  id int NOT NULL AUTO_INCREMENT,
-  email varchar(30) NOT NULL,
-  password varchar(255) NOT NULL,
-  PRIMARY KEY (id)
-);
-
 CREATE TABLE trips (
 	id int AUTO_INCREMENT NOT NULL,
     trip_name VARCHAR(255),
