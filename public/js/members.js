@@ -4,4 +4,11 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
   });
+
+
+$("#newTripBtn").on("click", function() {
+  window.location.replace("/newtrip")
+})
+
 });
+

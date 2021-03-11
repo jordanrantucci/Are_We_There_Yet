@@ -45,6 +45,12 @@ module.exports = function(app) {
     })
   });
 
+
+  app.get("/newtrip", isAuthenticated, function (req, res) {
+      res.render('partials/newtrip')  
+    });
+
+
   app.get("/signup", function(req, res) {
     console.log("html-routes.js line 43")
     res.render('partials/signup')
