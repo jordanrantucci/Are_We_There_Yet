@@ -7,13 +7,14 @@
     </div>
   </div>
 </nav>
-  <div class="container">
+<h1>My Trips</h1>
+  {{!-- <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>My Trips <span class="member-name"></span></h2>
       </div>
     </div>
-  </div>
+  </div> --}}
   {{!-- <ul>
   {{#each posts}}
   <li>
@@ -27,25 +28,10 @@
   </li>
   {{/each}}
 </ul> --}}
+{{!-- 
+<h2>Make a New Trip</h2> --}}
 
-
-{{!-- {{#each trips}} --}}
-  <div class="card" style="width: 18rem;">
-    <div class="card-header">
-      Trip Name: {{trips.trip_name}}
-    </div>
-    <ul class="list-group list-group-flush">
-      {{!-- <li class="list-group-item">People: {{this.people.name}}</li>
-      <li class="list-group-item">Starting Location: {{this.city_name}}</li> --}}
-      <li class="list-group-item">Activites</li>
-      <li class="list-group-item">Ending location</li>
-    </ul>
-  </div>
-  {{!-- {{/each}} --}}
-
-<h2>Make a New Trip</h2>
-
-<form id="create-form" action="/api/trip" method="POST">
+{{!-- <form id="create-form" action="/api/trip" method="POST"> --}}
 
   {{!-- <div class="form-group">
     <label for="auth">People_id:</label>
@@ -57,10 +43,10 @@
     <textarea id="quo" name="quote" rows="8" cols="40"></textarea>
   </div> --}}
 
-    <div class="form-group">
+    {{!-- <div class="form-group">
     <label for="auth">Trip Name:</label>
     <input type="text" id="trip_name" name="trip_name">
-  </div>
+  </div> --}}
 
     {{!-- <div>
       <button type="button" class="btn btn-success">View Trip</button>
@@ -69,11 +55,11 @@
  --}}
 
   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-    <button type="submit" class="btn btn-info">Create a Trip</button>
-    <button type="submit" class="btn btn-success" id="newTripBtn">New Trip</button>
+    {{!-- <button type="submit" class="btn btn-info">Create a Trip</button> --}}
+    <button type="submit" class="btn btn-success" id="newTripBtn">Create a New Trip!</button>
   </div>
 
 
-</form>
+{{!-- </form> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
