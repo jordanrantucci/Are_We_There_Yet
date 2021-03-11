@@ -69,7 +69,6 @@ module.exports = function(app) {
     db.trips.create({
       trip_name: req.body.trip_name,
     }).then(function(createdTrip) {
-      console.log(db.users)
       db.User.update({
         trips_id: createdTrip.id
       },

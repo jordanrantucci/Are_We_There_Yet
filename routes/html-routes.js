@@ -38,7 +38,6 @@ module.exports = function(app) {
     db.trips.findOne({
       where: {id: req.user.trips_id}
     }).then(function(result) {
-      console.log("html-routes.js line 37")
 
       console.log(result)
 
@@ -51,7 +50,6 @@ module.exports = function(app) {
     db.trips.findOne({
       where: { id: req.user.trips_id }
     }).then(function (result) {
-      console.log("html-routes.js line 37")
 
       console.log(result)
 

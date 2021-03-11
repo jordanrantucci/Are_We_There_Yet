@@ -35,9 +35,7 @@ db.Sequelize = Sequelize;
 
 //Models/tables
 db.trips = require('./trip.js')(sequelize, Sequelize)
-db.people = require('./people.js')(sequelize, Sequelize)
 db.users = require('./user.js')(sequelize, Sequelize)
-db.locations = require('./location.js')(sequelize, Sequelize)
 db.posts = require('./post.js')(sequelize, Sequelize)
 
 //Relations
