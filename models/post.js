@@ -8,14 +8,13 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrament: true,
             primaryKey: true
         },
-
         body: {
             type: DataTypes.STRING(255)
         },
         people_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'People',
+                model: 'Users',
                 key: 'id'
             }
         },

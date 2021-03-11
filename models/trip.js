@@ -11,8 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     trip_name: {
         type: DataTypes.STRING(255),
         allowNull: false,
-    },
-    
+    }
   });
   return Trip;
 };

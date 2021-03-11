@@ -17,10 +17,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    people_id: {
+    persons_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'People',
+        model: 'Peoples',
         key: 'id'
     }
     },
