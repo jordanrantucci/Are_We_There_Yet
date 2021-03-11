@@ -47,6 +47,19 @@ module.exports = function(app) {
     })
   });
 
+  app.get("/newtrip", isAuthenticated, function (req, res) {
+    db.trips.findOne({
+      where: { id: req.user.trips_id }
+    }).then(function (result) {
+      console.log("html-routes.js line 37")
+
+      console.log(result)
+
+      // res.sendFile(path.join(__dirname, "../public/members.html"));
+      res.render('partials/newtrip', { trips: result })
+    })
+  });
+
   app.get("/signup", function(req, res) {
     console.log("html-routes.js line 43")
     res.render('partials/signup')
