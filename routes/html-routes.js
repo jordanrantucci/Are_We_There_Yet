@@ -33,10 +33,18 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  // Updated mytrips route to include trips_id
   app.get("/mytrips", isAuthenticated, function(req, res) {
-    console.log("html-routes.js line 37")
-    // res.sendFile(path.join(__dirname, "../public/members.html"));
-    res.render('partials/mytrips')
+    db.trips.findOne({
+      where: {id: req.user.trips_id}
+    }).then(function(result) {
+      console.log("html-routes.js line 37")
+
+      console.log(result)
+
+      // res.sendFile(path.join(__dirname, "../public/members.html"));
+      res.render('partials/mytrips', {trips: result})
+    })
   });
 
   app.get("/signup", function(req, res) {
