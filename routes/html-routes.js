@@ -21,11 +21,10 @@ module.exports = function(app) {
   });
 
   app.get("/login", function(req, res) {
-    console.log("html-routes.js line 24")
     // If the user already has an account send them to the members page
     if (req.user) {
       // res.redirect("/members");
-      console.log("html-routes line 28")
+
     }
     // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render('partials/login')
@@ -43,18 +42,6 @@ module.exports = function(app) {
 
       // res.sendFile(path.join(__dirname, "../public/members.html"));
       res.render('partials/mytrips', {trips: result})
-    })
-  });
-
-  app.get("/newtrip", isAuthenticated, function (req, res) {
-    db.trips.findOne({
-      where: { id: req.user.trips_id }
-    }).then(function (result) {
-
-      console.log(result)
-
-      // res.sendFile(path.join(__dirname, "../public/members.html"));
-      res.render('partials/newtrip', { trips: result })
     })
   });
 

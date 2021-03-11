@@ -27,11 +27,13 @@ $(document).ready(function() {
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
+    console.log("login.js line 30")
     $.post("/api/login", {
       email: email,
       password: password
     })
       .then(function() {
+        console.log("login.js line 36")
         window.location.replace("/mytrips");
         // If there's an error, log the error
       })
