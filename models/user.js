@@ -17,17 +17,17 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    people_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'People',
-        key: 'id'
-    }
-    },
+    // persons_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'Peoples',
+    //     key: 'id'
+    // }
+    // },
     trips_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Trips',
+        model: 'trips',
         key: 'id'
       }
     }
