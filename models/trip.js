@@ -14,7 +14,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     route_name: {
       type: DataTypes.STRING(255),
-      allowNull: false
     },
     attendees: {
       type: DataTypes.STRING(255)
