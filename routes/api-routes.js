@@ -7,7 +7,6 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    console.log("api-routes.js line 10")
     res.json(req.user);
   });
 
@@ -70,7 +69,7 @@ module.exports = function(app) {
       trip_name: req.body.trip_name,
       attendees: req.body.attendeesBox,
       trip_info: req.body.tripInfoBox,
-      route_name: req.body.trip_name
+      route_name: req.body.trip_name.replace(/\s+/g, "").toLowerCase()
     }).then(function(createdTrip) {
       db.User.update({
         trips_id: createdTrip.id
@@ -92,7 +91,7 @@ module.exports = function(app) {
       res.json({
       id: req.trip.id,
       trip_name: req.trip.trip_name,
-      route_name: req.trip.trip_name,
+      route_name: req.trip.route_name,
       attendees: req.trip.attendees,
       trip_info: req.trip.trip_info
       })
