@@ -34,14 +34,15 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   // Updated mytrips route to include trips_id
   app.get("/mytrips", isAuthenticated, function(req, res) {
-    db.trips.findOne({
-      where: {id: req.user.trips_id}
+    db.trips.findAll({
     }).then(function(result) {
-
-      console.log(result)
+      const tripObj = {trips: result.map(data=>{
+        return data.dataValues
+      })}
+      console.log(tripObj)
 
       // res.sendFile(path.join(__dirname, "../public/members.html"));
-      res.render('partials/mytrips', {trips: result})
+      res.render('partials/mytrips', {trips:tripObj.trips})
     })
   });
 
