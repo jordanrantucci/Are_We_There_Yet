@@ -6,12 +6,12 @@ $(document).ready(function() {
   });
 
 
-$("#newTripBtn").on("click", function() {
-  window.location.replace("/newtrip")
-})
+  $("#newTripBtn").on("click", function() {
+    window.location.replace("/newtrip")
+  })
 
   $("#viewTripBtn").on("click", function () {
-    window.location.replace("/" + trips.route_name)
+    window.location.replace("/" + this.route_name)
   })
 
 });

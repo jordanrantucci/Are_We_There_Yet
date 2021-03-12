@@ -15,8 +15,8 @@
     {{trip.trip_name}}
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Attendes: {{trip.attendees}}</li> <!-- will have to put {{this.attendees}} for attendees or we will have to post the info here -->
-    <li class="list-group-item">Trip Information: {{trip.trip_info}}</li> <!-- {{this.trip_info}}--> 
+    <li class="list-group-item">Attendees: {{trip.attendees}}</li>
+    <li class="list-group-item">Trip Information: {{trip.trip_info}}</li> 
   </ul>
     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
       <button type="submit" class="btn btn-primary" id="viewTripBtn">View Trip</button>
@@ -27,8 +27,7 @@
 
 
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  {{!-- <button type="submit" class="btn btn-info">Create a Trip</button> --}}
-  <button type="submit" class="btn btn-success" id="newTripBtn">Create a New Trip!</button>
+  <button type="submit" class="btn btn-success" id="newTripBtn" name="newTripBtn">Create a New Trip!</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
