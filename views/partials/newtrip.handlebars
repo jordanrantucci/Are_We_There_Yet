@@ -1,18 +1,16 @@
 <form id="create-form" action="/api/trip" method="POST">
 	<div class="form-group">
     	<label for="trip_name" class="form-label">Trip Name:</label>
-    	<input type="text" id="trip_name" name="trip_name">
+    	<input type="text" id="tripNameBox" name="trip_name">
   	</div>
 	<div class="mb-3">
 	<div class="mb-3">
 		<label for="Attendees" class="form-label">Attendees</label>
-		<textarea class="form-control" id="Attendees" rows="3"></textarea>
+		<textarea class="form-control" id="attendeesBox" rows="3"></textarea>
 	</div>
 	<div class="mb-3">
 		<label for="tripInfo" class="form-label">Trip Information</label>
-		<textarea class="form-control" id="tripInfo" rows="3"></textarea>
+		<textarea class="form-control" id="tripInfoBox" rows="3"></textarea>
 	</div>
-	<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-    	<button type="submit" class="btn btn-info">Create a Trip</button>
-	</div>
+	<button type="submit" class="btn btn-info">Create a Trip</button>
 </form>

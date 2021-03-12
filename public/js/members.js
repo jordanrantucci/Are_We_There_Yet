@@ -11,7 +11,7 @@ $("#newTripBtn").on("click", function() {
 })
 
   $("#viewTripBtn").on("click", function () {
-    window.location.replace(`/${this.trips.id}`)
+    window.location.replace("/" + trips.route_name)
   })
 
 });

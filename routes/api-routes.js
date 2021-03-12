@@ -68,6 +68,9 @@ module.exports = function(app) {
   app.post("/api/trip", function(req, res) {
     db.trips.create({
       trip_name: req.body.trip_name,
+      attendees: req.body.attendeesBox,
+      trip_info: req.body.tripInfoBox,
+      route_name: req.body.trip_name
     }).then(function(createdTrip) {
       db.User.update({
         trips_id: createdTrip.id
@@ -85,8 +88,17 @@ module.exports = function(app) {
       where: {
         id: req.trip.id
       }
+    }).then(function() {
+      res.json({
+      id: req.trip.id,
+      trip_name: req.trip.trip_name,
+      route_name: req.trip.trip_name,
+      attendees: req.trip.attendees,
+      trip_info: req.trip.trip_info
+      })
+    }).then(function () {
+      res.redirect("/" + route_name)
     })
-    console.log(req.trip.id)
   })
 
 };
