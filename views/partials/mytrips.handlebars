@@ -10,7 +10,18 @@
 <h1>My Trips</h1>
 
 {{#each trips}}
-  <p>{{this.trip_name}}</p>
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    {{this.trip_name}}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Attendes</li> <!-- will have to put {{this.attendees}} for attendees or we will have to post the info here -->
+    <li class="list-group-item">Trip Information</li> <!-- {{this.trip_info}}--> 
+  </ul>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button type="submit" class="btn btn-primary" id="viewTripBtn">View Trip</button>
+    </div>
+</div>
 {{/each}}
 
 

@@ -10,5 +10,9 @@ $("#newTripBtn").on("click", function() {
   window.location.replace("/newtrip")
 })
 
+  $("#viewTripBtn").on("click", function () {
+    window.location.replace(`/${this.trips.id}`)
+  })
+
 });
 
