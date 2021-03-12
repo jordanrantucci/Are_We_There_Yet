@@ -55,4 +55,8 @@ module.exports = function(app) {
     console.log("html-routes.js line 43")
     res.render('partials/signup')
   })
+
+  app.get("/mytrips/:trip", function(req, res) {
+    res.render("partials/trip")
+  })
 };

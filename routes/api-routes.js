@@ -79,4 +79,14 @@ module.exports = function(app) {
           })
     })
   })
+
+  app.get("/api/trip/:trip", function (req, res) {
+    db.trips.findOne({
+      where: {
+        id: req.trip.id
+      }
+    })
+    console.log(req.trip.id)
+  })
+
 };
