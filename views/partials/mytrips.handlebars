@@ -1,3 +1,5 @@
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -19,7 +21,7 @@
     <li class="list-group-item">Trip Information: {{trip.trip_info}}</li> 
   </ul>
     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-      <button type="submit" class="btn btn-primary" id="viewTripBtn">View Trip</button>
+      <button type="submit" class="btn btn-primary viewTripBtn" data-id={{trip.id}}>View Trip</button>
     </div>
 </div>
 {{/each}}
@@ -30,5 +32,5 @@
   <button type="submit" class="btn btn-success" id="newTripBtn" name="newTripBtn">Create a New Trip!</button>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script type="text/javascript" src="/js/members.js"></script>
