@@ -35,22 +35,17 @@ db.Sequelize = Sequelize;
 
 //Models/tables
 db.trips = require('./trip.js')(sequelize, Sequelize)
-db.people = require('./people.js')(sequelize, Sequelize)
+
 db.users = require('./user.js')(sequelize, Sequelize)
-db.locations = require('./location.js')(sequelize, Sequelize)
+
 db.posts = require('./post.js')(sequelize, Sequelize)
 
 //Relations
-db.posts.belongsTo(db.people)
-db.posts.belongsTo(db.trips)
-db.locations.belongsTo(db.trips)
-db.users.belongsTo(db.people)
-db.users.belongsTo(db.trips)
-// db.people.belongsTo(db.trip)
-db.trips.hasMany(db.locations)
-db.trips.hasMany(db.people)
-db.trips.hasMany(db.users)
-db.trips.hasMany(db.posts)
+
+// db.posts.belongsTo(db.trips)
+// db.users.belongsToMany(db.trips)
+// // db.trips.hasMany(db.users, {onDelete: "CASCADE", onUpdate: "CASCADE"})
+// db.trips.hasMany(db.posts)
 
 
 module.exports = db;
