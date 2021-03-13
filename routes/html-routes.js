@@ -11,9 +11,11 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
+
     if (req.user) {
       res.redirect("/mytrips");
     }
+
     res.render('partials/login')
   });
 
@@ -23,7 +25,6 @@ module.exports = function(app) {
       res.redirect("/mytrips");
 
     }
-
     res.render('partials/login')
   });
 
@@ -32,7 +33,6 @@ module.exports = function(app) {
   app.get("/mytrips", isAuthenticated, function(req, res) {
     db.trips.findAll({
     }).then(function(result) {
-
       const trips = _.map(result, "dataValues")
       const tripObj = {trips: trips}
       console.log(tripObj)
@@ -52,7 +52,6 @@ module.exports = function(app) {
 
 
   app.get("/signup", function(req, res) {
-
     res.render('partials/signup')
   })
 

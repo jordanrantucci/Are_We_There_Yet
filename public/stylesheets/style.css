@@ -6,3 +6,8 @@ form.login {
 /* body {
   ;
 } */
+
+.tripCard {
+  margin: 5%;
+  position: relative;
+}
