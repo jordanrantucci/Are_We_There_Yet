@@ -85,19 +85,26 @@ module.exports = function(app) {
   app.get("/api/trip/:trip", function (req, res) {
     db.trips.findOne({
       where: {
-        id: req.params.trip
+        id: req.params.trip.id
       }
     }).then(function() {
       res.json({
-      id: req.trip.id,
+      id: req.params.trip.id,
       trip_name: req.trip.trip_name,
       route_name: req.trip.route_name,
       attendees: req.trip.attendees,
       trip_info: req.trip.trip_info
-      })
-    }).then(function () {
-      res.redirect("/" + route_name)
     })
   })
+})
 
-};
+  app.delete('/api/trip/:id', (req, res) => {
+    console.log(req.params.id)
+    db.trips.destroy({
+      where: {
+        id: req.params.id,
+      }
+    })
+  })
+  
+}

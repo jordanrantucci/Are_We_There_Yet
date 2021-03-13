@@ -11,9 +11,9 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
-    console.log("html-apiRoutes.js line 14")
+    // console.log("html-apiRoutes.js line 14")
     if (req.user) {
-      console.log("html-routes.js line 16")
+      // console.log("html-routes.js line 16")
       // res.redirect("/members");
     }
     // res.sendFile(path.join(__dirname, "login"));
@@ -39,8 +39,6 @@ module.exports = function(app) {
       const tripObj = {trips: result.map(data=>{
         return data.dataValues
       })}
-      console.log(tripObj)
-
       // res.sendFile(path.join(__dirname, "../public/members.html"));
       res.render('partials/mytrips', {trips:tripObj.trips})
     })
@@ -53,11 +51,23 @@ module.exports = function(app) {
 
 
   app.get("/signup", function(req, res) {
-    console.log("html-routes.js line 43")
+    // console.log("html-routes.js line 43")
     res.render('partials/signup')
   })
 
   app.get("/mytrips/:trip", function(req, res) {
-    res.render("partials/trip")
+    const trip={id: req.params.trip}
+    res.render("partials/trip", trip)
+    // console.log(req.params.trip)
+  })
+
+  app.delete("/mytrips/:trip", function(req, res) {
+    db.trips.findOne({
+      where: {
+        id: req.params.trip
+      }
+    }).then(function () {
+      res.redirect("/mytrips")
+    })
   })
 };
