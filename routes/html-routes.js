@@ -11,35 +11,29 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
-    // console.log("html-apiRoutes.js line 14")
     if (req.user) {
-      // console.log("html-routes.js line 16")
-      // res.redirect("/members");
+      res.redirect("/mytrips");
     }
-    // res.sendFile(path.join(__dirname, "login"));
     res.render('partials/login')
   });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      // res.redirect("/members");
+      res.redirect("/mytrips");
 
     }
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render('partials/login')
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  // Updated mytrips route to include trips_id
   app.get("/mytrips", isAuthenticated, function(req, res) {
     db.trips.findAll({
     }).then(function(result) {
       const tripObj = {trips: result.map(data=>{
         return data.dataValues
       })}
-      // res.sendFile(path.join(__dirname, "../public/members.html"));
       res.render('partials/mytrips', {trips:tripObj.trips})
     })
   });
@@ -51,14 +45,12 @@ module.exports = function(app) {
 
 
   app.get("/signup", function(req, res) {
-    // console.log("html-routes.js line 43")
     res.render('partials/signup')
   })
 
   app.get("/mytrips/:trip", function(req, res) {
     const trip={id: req.params.trip}
     res.render("partials/trip", trip)
-    // console.log(req.params.trip)
   })
 
   app.delete("/mytrips/:trip", function(req, res) {
