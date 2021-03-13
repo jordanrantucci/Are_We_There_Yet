@@ -9,5 +9,6 @@ form.login {
 
 .tripCard {
   margin: 5%;
-  position: relative;
+  position: static;
+  vertical-align: middle;
 }

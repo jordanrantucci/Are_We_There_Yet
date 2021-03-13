@@ -10,8 +10,10 @@
   </div>
 </nav>
 <h1>My Trips</h1>
-
+<container class="row">
 {{#each trips as |trip|}}
+
+<div class="col-6">
 <div class="card tripCard" style="width: 18rem;">
   <div class="card-header">
     {{trip.trip_name}}
@@ -24,13 +26,16 @@
       <button type="submit" class="btn btn-primary viewTripBtn" data-id={{trip.id}}>View Trip</button>
     </div>
 </div>
-{{/each}}
-
-
-
-<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  <button type="submit" class="btn btn-success" id="newTripBtn" name="newTripBtn">Create a New Trip!</button>
 </div>
+
+{{/each}}
+</container>
+
+
+
+
+  <button type="submit" class="btn btn-success" id="newTripBtn">Create a New Trip!</button>
+
 
 
 <script type="text/javascript" src="/js/members.js"></script>

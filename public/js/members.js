@@ -26,5 +26,7 @@ $(document).ready(function() {
     .then(window.location.replace("/mytrips"));
   })
 
-//  })
+  $(".allTripBtn").on("click", function () {
+    window.location.replace("/mytrips")
+  })
 })
