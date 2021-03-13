@@ -1,3 +1,5 @@
+const user = require("./user");
+
 // Creating our trips model
 module.exports = function(sequelize, DataTypes) {
   var Trip = sequelize.define("Trip", {
@@ -22,5 +24,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(255)
     }
   });
+  Trip.associate = (models) => {
+    Trip.belongsTo(models.User, {
+      onDelete: "CASCADE"
+    })
+  }
   return Trip;
 };

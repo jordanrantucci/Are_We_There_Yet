@@ -13,48 +13,18 @@ $(document).ready(function() {
 
   $(".viewTripBtn").on("click", function (event) {
     window.location.replace(`/mytrips/${event.target.dataset.id}`)
-    // console.log(event.target.dataset.id)
   })
 
   $(".deleteBtn").on("click", function (event) {
-    // e.stopPropagation();
-    // console.log(e.target)
-    const id = event.target.dataset.id;
-    console.log(id)
+    const id = event.target.dataset.id
     fetch(`/api/trip/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
       }
     })
-    // .then(window.location.replace("/mytrips"));
-    // console.log(event.target.dataset)
+    .then(window.location.replace("/mytrips"));
   })
 
 //  })
 })
-  // // //   const tripId = this.id;
-  // // //   console.log(tripId)
-  // // // }).then((req) => {
-  // // //     req.target.parentElement.remove();
-  // // //     console.log('deleted')
-  // // //   });
-  // //   console.log(this)
-  
-  // //   $.delete("/mytrips/:trip").then(function(data) {
-  // //     db.trips.findOne({
-  // //       where: {
-  // //         id: req.params.trip
-  // //       }
-  // //     })
-  // //   })
-  //   $.get('/api/trip/:trip', (req, res) => {
-  //     db.trips.destroy({
-  //       where: {
-  //         id: req.params.trip,
-  //       },
-  //     })
-  //   })
-  //   .then(function () {
-  //       res.redirect("/mytrips")
- 

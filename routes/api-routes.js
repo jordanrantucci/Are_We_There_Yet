@@ -16,13 +16,10 @@ module.exports = function(app) {
   // Added name 
   app.post("/api/signup", function(req, res) {
     
-    db.people.create({
-      name: req.body.name
-    }).then(function(createdPeople) {
+
       db.User.create({
         email: req.body.email,
         password: req.body.password,
-        people_id: createdPeople.id
       })
         .then(function(createdUser) {
           res.redirect(307, "/api/login");
@@ -31,7 +28,7 @@ module.exports = function(app) {
           res.status(401).json(err);
         });
     })
-  });
+
 
   // Route for logging user out
   app.get("/logout", function(req, res) {
@@ -50,7 +47,6 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        people_id: req.user.people_id,
         trips_id: req.user.trips_id //this is a foreign key referencing the 'people' table- shows up as null. correct syntax for this?
       });
     }
@@ -99,7 +95,6 @@ module.exports = function(app) {
 })
 
   app.delete('/api/trip/:id', (req, res) => {
-    console.log(req.params.id)
     db.trips.destroy({
       where: {
         id: req.params.id,
