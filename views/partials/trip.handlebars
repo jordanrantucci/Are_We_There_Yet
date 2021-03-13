@@ -1,5 +1,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        {{this.trip_name}}
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Attendees: {{this.attendees}}</li>
+        <li class="list-group-item">Trip Information: {{this.trip_info}}</li>
+    </ul>
+</div>
+
+
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
   <button class="btn btn-danger deleteBtn" data-id={{id}}>Delete Trip</button>
 </div>
