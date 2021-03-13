@@ -14,7 +14,7 @@
 {{#each trips as |trip|}}
 
 <div class="col-6">
-<div class="card tripCard" style="width: 18rem;">
+<div class="card tripCard">
   <div class="card-header">
     {{trip.trip_name}}
   </div>
@@ -31,11 +31,10 @@
 {{/each}}
 </container>
 
-
-
-
-  <button type="submit" class="btn btn-success" id="newTripBtn">Create a New Trip!</button>
-
-
+<container class="row">
+  <div class="col-12" id="newTripBtnDiv">
+    <button type="submit" class="btn btn-success" id="newTripBtn">Create a New Trip!</button>
+  </div>
+</container>
 
 <script type="text/javascript" src="/js/members.js"></script>

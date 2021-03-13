@@ -1,8 +1,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<div class="card" style="width: 18rem;">
+<div class="card tripPageCard">
     <div class="card-header">
-        {{trip_name}}
+        <h1>{{trip_name}}</h1>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Attendees: {{attendees}}</li>
@@ -10,13 +10,16 @@
     </ul>
 </div>
 
-<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-    <button type="submit" class="btn btn-primary allTripBtn">Back to All Trips</button>
-</div>
-<br><br>
-<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  <button class="btn btn-danger deleteBtn" data-id={{id}}>Delete Trip</button>
-</div>
+<container class="row">
+    <div class="col-6">
+        <button type="submit" class="btn btn-primary allTripBtn" id="back2TripsBtn">Back to All Trips</button>
+    </div>
 
+    <br><br>
+
+    <div class="col-6">
+        <button class="btn btn-danger deleteBtn" data-id={{id}}>Delete Trip</button>
+    </div>
+</container>
 
 <script type="text/javascript" src="/js/members.js"></script>
