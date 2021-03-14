@@ -1,13 +1,49 @@
 form.signup,
 form.login {
-  margin-top: 50px;
+  margin-top: 5%;
 }
 
-/* body {
-  ;
+h1 {
+  text-align: center;
+}
+
+/*----MYTRIPS PAGE----*/
+.tripCard {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom:5%;
+  position: static;
+}
+
+/* #newTripBtnDiv {
+
 } */
 
-.tripCard {
-  margin: 5%;
-  position: relative;
+#newTripBtn {
+  width: 16%;
+  margin-left: 42%;
+  margin-right: 42%;
+}
+
+/*----TRIP PAGE----*/
+.tripPageCard {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 5%;
+}
+
+#back2TripsBtn {
+  width: 50%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.deleteBtn {
+  width: 25%;
+  margin-left: 70%;
+  margin-top: 5%;
+  text-align: center;
 }
