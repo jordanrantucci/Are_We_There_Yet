@@ -34,6 +34,7 @@ h1 {
   margin-right: 42%;
 }
 
+
 /*----NEW TRIP PAGE----*/
 .newTripForm {
   background-image: url("./sunset-road2.jpg");
@@ -63,6 +64,20 @@ h1 {
   width: 20%;
 }
 
+
+.mapouter {
+	position: relative;
+	text-align: right;
+	height: 500px;
+	width: 600px;
+}
+
+.gmap_canvas {
+   overflow: hidden;
+   background: none !important;
+   height: 500px;
+   width: 600px;
+  }
 
 /*----TRIP PAGE----*/
 .tripPageCard {
