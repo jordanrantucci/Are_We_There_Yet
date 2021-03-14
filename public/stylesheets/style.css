@@ -1,46 +1,161 @@
+/*----WHOLE APP----*/
+.navbar {
+  transition: all 0.4s;
+}
+
+.navbar .nav-link {
+  color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+  background: #fff;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+  color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+  color: #555;
+  text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+  color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+  .navbar {
+      background: #fff;
+  }
+
+  .navbar .navbar-brand, .navbar .nav-link {
+      color: #555;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 65px;
+  font-family: 'Caveat', cursive;
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/*----SIGNUP & LOGIN----*/
 form.signup,
 form.login {
   margin-top: 5%;
 }
 
-h1 {
-  text-align: center;
+/*----MYTRIPS PAGE----*/
+
+.myTripsTop {
+  background-image: url("./sunrise-road.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-/*----MYTRIPS PAGE----*/
 .tripCard {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5%;
-  margin-bottom:5%;
+  margin-top: 15%;
+  margin-bottom: 5%;
   position: static;
+  opacity: 95%;
+  background-color: white;
+  text-align: center;
 }
 
-/* #newTripBtnDiv {
-
-} */
+.viewTripBtn {
+  background-color: rgb(218, 144, 32);
+  width: 100%;
+}
 
 #newTripBtn {
   width: 16%;
+  margin-top: 2%;
   margin-left: 42%;
   margin-right: 42%;
 }
 
-/* ---- googlemap ---- */
-	.mapouter {
-				position: relative;
-				text-align: right;
-				height: 500px;
-				width: 600px;
-			}
+/*----NEW TRIP PAGE----*/
 
-  	.gmap_canvas {
-				overflow: hidden;
-				background: none !important;
-				height: 500px;
-				width: 600px;
-			}
+.newTripForm {
+  background-image: url("./sunset-road3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#create-form {
+  width: 45%;
+  margin: 5%;
+  padding: 3%;
+  position: static;
+  color: black;
+  font-size: 28px;
+  font-family: 'Fira Sans', sans-serif;
+  background-color: white;
+  opacity: 90%;
+  border-radius: 10%;
+}
+
+#tripNameBox {
+  width: 90%;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  margin-left: 22.5%;
+  margin-right: 22.5%;
+  margin-top: 2%;
+  width: 55%;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  margin-left: 22.5%;
+  margin-right: 22.5%;
+  margin-top: 5%;
+  width: 55%;
+}
+
+#backTripBtn {
+  width: 50%;
+  margin-bottom: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
 
 /*----TRIP PAGE----*/
 .tripPageCard {
