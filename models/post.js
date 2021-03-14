@@ -11,13 +11,6 @@ module.exports = function (sequelize, DataTypes) {
         body: {
             type: DataTypes.STRING(255)
         },
-        people_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'Users',
-                key: 'id'
-            }
-        },
         trips_id: {
             type: DataTypes.INTEGER,
             references: {
