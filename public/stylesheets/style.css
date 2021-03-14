@@ -106,6 +106,9 @@ form.login {
   margin-right: 42%;
 }
 
+.row{
+  background-color: #fff;
+}
 /*----NEW TRIP PAGE----*/
 
 .newTripForm {
@@ -177,3 +180,11 @@ form.login {
   margin-top: 5%;
   text-align: center;
 }
+.loginbackground{
+  background-image:url("bridge.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 350px;
+  }
+
