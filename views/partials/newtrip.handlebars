@@ -1,26 +1,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<form id="create-form" action="/api/trip" method="POST">
-	<div class="form-group">
-    	<label for="trip_name" class="form-label">Trip Name:</label>
-    	<input type="text" id="tripNameBox" name="trip_name">
-  	</div>
-	<div class="mb-3">
-		<div class="mb-3">
-			<label for="Attendees" class="form-label">Attendees:</label>
-			<textarea class="form-control" id="attendeesBox" name="attendeesBox" rows="3"></textarea>
+<container class="row newTripForm">
+	<form id="create-form" action="/api/trip" method="POST">
+		<div class="form-group">
+			<label for="trip_name" class="form-label">Trip Name:</label>
+			<input type="text" id="tripNameBox" name="trip_name">
 		</div>
 		<div class="mb-3">
-			<label for="tripInfo" class="form-label">Trip Information:</label>
-			<textarea class="form-control" id="tripInfoBox" rows="3" name="tripInfoBox"></textarea>
+			<div class="mb-3">
+				<label for="Attendees" class="form-label">Attendees:</label>
+				<textarea class="form-control" id="attendeesBox" name="attendeesBox" rows="3"></textarea>
+			</div>
+			<div class="mb-3">
+				<label for="tripInfo" class="form-label">Trip Information:</label>
+				<textarea class="form-control" id="tripInfoBox" rows="3" name="tripInfoBox"></textarea>
+			</div>
+			
+			<button class="btn btn-info" name="newTripBtn">Create Trip</button>
 		</div>
-		
-		<button class="btn btn-info" name="newTripBtn">Create Trip</button>
-	</div>
-</form>
-
-<div class="btn-group" role="group" aria-label="Basic mixed styles example">
-    <button type="submit" class="btn btn-primary allTripBtn">Back to All Trips</button>
+	</form>
+</container>
+<div>
+    <button type="submit" class="btn btn-primary allTripBtn" id="backTripBtn">Back to All Trips</button>
 </div>
 
 <script type="text/javascript" src="/js/members.js"></script>

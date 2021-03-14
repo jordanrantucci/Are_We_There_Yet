@@ -8,6 +8,13 @@ h1 {
 }
 
 /*----MYTRIPS PAGE----*/
+.myTripsContainer {
+  background-image: url("./sunset_road.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .tripCard {
   width: 80%;
   margin-left: auto;
@@ -26,6 +33,36 @@ h1 {
   margin-left: 42%;
   margin-right: 42%;
 }
+
+/*----NEW TRIP PAGE----*/
+.newTripForm {
+  background-image: url("./sunset-road2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#create-form {
+  width: 35%;
+  margin: 5%;
+  padding: 3%;
+  position: static;
+  color: black;
+  font-size: 30px;
+  background-color: white;
+  opacity: 90%;
+  border-radius: 10%;
+}
+
+#tripNameBox {
+  width: 90%;
+}
+
+#backTripBtn {
+  margin: 3%;
+  width: 20%;
+}
+
 
 /*----TRIP PAGE----*/
 .tripPageCard {
