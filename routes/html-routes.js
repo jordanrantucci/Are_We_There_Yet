@@ -37,6 +37,7 @@ module.exports = function(app) {
       // {trips: result.map(data=>{
       //  return data.dataValues
       // })}
+      console.log(tripObj)
       res.render('partials/mytrips', tripObj)
     })
   });
