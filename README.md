@@ -11,7 +11,7 @@ This app was designed for a group of friends that are planning a road trip toget
 
 Deployed application link: (https://arewethereyet.herokuapp.com)
 
-The following image demonstrates the application functionality:
+The following images demonstrate the application functionality:
 
 <img src = "./public/stylesheets/example.png">
 <img src = "./public/stylesheets/example2.png">
