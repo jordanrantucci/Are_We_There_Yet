@@ -1,0 +1,229 @@
+/*----WHOLE APP----*/
+.navbar {
+  transition: all 0.4s;
+}
+
+.navbar .nav-link {
+  color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .navbar-brand {
+  color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+  background: #fff;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+  color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+  color: #555;
+  text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+  color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+  .navbar {
+      background: #fff;
+  }
+
+  .navbar .navbar-brand, .navbar .nav-link {
+      color: #555;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 65px;
+  font-family: 'Caveat', cursive;
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/*----SIGNUP & LOGIN----*/
+form.signup,
+form.login {
+  margin-top: 5%;
+}
+
+/*----MYTRIPS PAGE----*/
+
+.myTripsTop {
+  background-image: url("./sunrise-road.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.tripCard {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  margin-bottom: 5%;
+  position: static;
+  opacity: 95%;
+  background-color: white;
+  text-align: center;
+}
+
+.viewTripBtn {
+  background-color: rgb(218, 144, 32);
+  width: 100%;
+}
+
+#newTripBtn {
+  width: 16%;
+  margin-top: 2%;
+  margin-left: 42%;
+  margin-right: 42%;
+}
+
+.row{
+  background-color: #fff;
+}
+/*----NEW TRIP PAGE----*/
+
+.newTripForm {
+  background-image: url("./sunset-road3.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#create-form {
+  width: 45%;
+  margin: 5%;
+  padding: 3%;
+  position: static;
+  color: black;
+  font-size: 28px;
+  font-family: 'Fira Sans', sans-serif;
+  background-color: white;
+  opacity: 90%;
+  border-radius: 10%;
+}
+
+#tripNameBox {
+  width: 90%;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  margin-left: 22.5%;
+  margin-right: 22.5%;
+  margin-top: 2%;
+  width: 55%;
+  border-style: solid;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  margin-left: 22.5%;
+  margin-right: 22.5%;
+  margin-top: 5%;
+  width: 55%;
+}
+
+#backTripBtn {
+  width: 50%;
+  margin-bottom: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+/*----TRIP PAGE----*/
+.tripPageCard {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 5%;
+}
+
+#back2TripsBtn {
+  width: 50%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.deleteBtn {
+  width: 25%;
+  margin-left: 70%;
+  margin-top: 5%;
+  text-align: center;
+}
+.background{
+  background-image:url("bridge.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 350px;
+  }
+p{
+  font-family: 'Fira Sans', sans-serif;
+  text-align:center;
+  color:#fff;
+  font-size: xx-large;
+}
+.logoimg{
+  position: absolute;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  margin-top: -450px;
+  margin-left: -250px;
+}
+.row1{
+  color: whitesmoke;
+  margin-left: 32%;
+  margin-right: 15%;
+  margin-top: 2%; 
+  box-sizing: content-box;
+  width: 75%;
+}
+.row2{
+  color: whitesmoke;
+  margin-left: 25%;
+  margin-right: 10%;
+  margin-top: -11%; 
+  box-sizing: content-box;
+  width: 75%;
+
+}
+.background2{
+  background-image:url("Mountain.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 350px;
+  }
+  
