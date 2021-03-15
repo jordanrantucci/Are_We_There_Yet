@@ -142,6 +142,7 @@ form.login {
   margin-right: 22.5%;
   margin-top: 2%;
   width: 55%;
+  border-style: solid;
 }
 
 .gmap_canvas {
@@ -180,11 +181,50 @@ form.login {
   margin-top: 5%;
   text-align: center;
 }
-.loginbackground{
+.background{
   background-image:url("bridge.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 350px;
   }
+p{
+  font-family: 'Fira Sans', sans-serif;
+  text-align:center;
+  color:#fff;
+  font-size: xx-large;
+}
+.logoimg{
+  position: absolute;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  margin-top: -450px;
+  margin-left: -250px;
+}
+.row1{
+  color: whitesmoke;
+  margin-left: 32%;
+  margin-right: 15%;
+  margin-top: 2%; 
+  box-sizing: content-box;
+  width: 75%;
+}
+.row2{
+  color: whitesmoke;
+  margin-left: 25%;
+  margin-right: 10%;
+  margin-top: -11%; 
+  box-sizing: content-box;
+  width: 75%;
+
+}
+.background2{
+  background-image:url("Mountain.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 350px;
+  }
+  
 
