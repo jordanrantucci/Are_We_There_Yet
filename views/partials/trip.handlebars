@@ -25,6 +25,26 @@
         <li class="list-group-item">Trip Information: {{trip_info}}</li>
     </ul>
 </div>
+<br>
+<section id="msgBoard">
+    <h2>Plan your trip together!</h2>
+    <button class="viewMsgs" name={{id}}>View Messages</button>
+    <br>
+    <br>
+    <container class="allMsgsDiv" id="allMsgsDiv">
+    </container>
+    <br>
+    <label for="writeMsg" class="form-label">Write a post:</label>
+    <form id="writeMsg" action="/api/posts" method="POST">
+     <textarea id="tripMsgBoard" name=
+    "tripMsgBoard" rows="4"></textarea>
+    <br>
+    <label for="author" class="form-label">Your name:</label>
+    <br>
+    <textarea id="author" rows="1"></textarea>
+    </form>
+   <button type="submit" class="submitPost" data-id={{id}}>Submit Post</button>
+</section>
 
 <container class="row1">
     <div class="col-xs-6 text-left">
@@ -36,3 +56,4 @@
 </body>
 
 <script type="text/javascript" src="/js/members.js"></script>
+<script type="text/javascript" src="/js/message-board.js"></script>

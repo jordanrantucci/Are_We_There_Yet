@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
         id: { 
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrament: true,
+            autoIncrement: true,
             primaryKey: true
         },
         body: {
@@ -13,10 +13,10 @@ module.exports = function (sequelize, DataTypes) {
         },
         trips_id: {
             type: DataTypes.INTEGER,
-            references: {
-              model: 'Trips',
-              key: 'id'
-          }
+            // references: {
+            //   model: 'Trips',
+            //   key: 'id'
+        //   }
         }
     });
  

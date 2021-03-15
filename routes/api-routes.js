@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var _ = require('lodash');
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -72,9 +73,10 @@ module.exports = function(app) {
       },
       {
         where: {id: req.user.id}
-      }).then(function() {
-            res.redirect("/mytrips");
-          })
+      })
+      .then(function() {
+        res.redirect("/mytrips");
+      })
     })
   })
 
@@ -94,7 +96,7 @@ module.exports = function(app) {
   })
 })
 
-  app.delete('/api/trip/:id', (req, res) => {
+  app.delete('/api/trip/:trips_id', (req, res) => {
     db.trips.destroy({
       where: {
         id: req.params.id,
@@ -102,4 +104,42 @@ module.exports = function(app) {
     })
   })
   
+
+  //----MESSAGEBOARD POSTS----
+  app.get('/api/posts/:trips_id', (req, res) => {
+    db.posts.findAll({
+      where: {
+        trips_id: req.params.trips_id
+      }
+    }).then(function(result) {
+      const post = _.map(result,"dataValues")
+      const postObj = { posts: post }
+      res.json(postObj)
+    })
+  })
+
+  app.get('/api/posts', (req, res) => {
+    db.posts.findAll({
+    }).then(function(result) {
+      const post = _.map(result,"dataValues")
+      const postObj = { posts: post }
+      res.json(postObj)
+    })
+  })
+
+  app.post("/api/posts/:id", (req, res) => {
+    db.posts.create({
+      body: req.body.body,
+      trips_id: req.body.trips_id
+    })
+  })
+
+  app.delete('/api/posts/:id', (req, res) => {
+    db.trips.destroy({
+      where: {
+        id: req.params.id,
+      }
+    })
+  })
+
 }

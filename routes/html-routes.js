@@ -34,9 +34,6 @@ module.exports = function(app) {
     }).then(function(result) {
       const trips = _.map(result, "dataValues")
       const tripObj = { trips: trips }
-      // {trips: result.map(data=>{
-      //  return data.dataValues
-      // })}
       res.render('partials/mytrips', tripObj)
     })
   });
@@ -55,17 +52,68 @@ module.exports = function(app) {
     db.trips.findOne({
       where: {
         id: req.params.trip
-      }
-    }).then(function (data){
-        const trip = {}
-        Object.assign(trip, data.dataValues)
-        console.log(data.dataValues)
-        console.log(trip)
-    //      const trip={id: req.params.trip}
-    res.render("partials/trip", trip)
+      } 
+    })
+    .then(function (data){
+      const trip = {}
+      Object.assign(trip, data.dataValues)
+      res.render("partials/trip", trip)
     })
   })
 
+  app.get("/mytrips/:trip", function(req, res) {
+    db.posts.findAll({
+      where: {
+        trips_id: req.params.trip
+      } 
+    })
+    .then(function (data){
+      const trip = {}
+      Object.assign(trip, data.dataValues)
+      res.render("partials/trip", trip)
+    })
+  })
+
+
+  // app.get("/mytrips/:trip", (function(req, res){
+  //   db.posts.findAll({
+  //     where: {
+  //       id: req.params.trips_id
+  //     }
+  //   }).then(function(data) {
+  //     // let post = {}
+  //     // Object.assign(post, data.dataValues)
+  //     // console.log(post)
+  //     // res.json({result})
+  //     // const posts = _.map(result,"dataValues")
+  //     // const postObj = { posts: posts}
+  //     // console.log(postObj)
+  //       const post = {}
+  //       Object.assign(post, data.dataValues)
+  //     res.render("partials/trip", post)
+  //   })
+    // .then(function(data){
+      // const post = {}
+      // Object.assign(post, data.dataValues)
+      // // res.render("partials/trip", post)
+  
+    // })
+    
+    // .then(function(data) {
+    //   console.log(data)
+    // })
+  // }))
+
+
+  // app.get("/mytrips/:trip", function(req, res) {
+  //   db.posts.findAll({
+  //     where: {
+  //       id:req.params.trips_id
+  //     }
+  //   }).then(function(data){
+  //     console.log(data)
+  //   })
+  // })
 
   app.delete("/mytrips/:trip", function(req, res) {
     db.trips.findOne({
@@ -74,6 +122,17 @@ module.exports = function(app) {
       }
     }).then(function () {
       res.redirect("/mytrips")
+    })
+  })
+
+  
+  app.delete("/mytrips/:trip", function(req, res) {
+    db.posts.findOne({
+      where: {
+        id: req.params.post
+      } 
+    }).then(function () {
+      location.reload()
     })
   })
 };
