@@ -5,16 +5,18 @@
 
 .navbar .nav-link {
   color: #fff;
+  font-size: 22px;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
-  color: #fff;
+  color: rgb(131, 131, 131);
   text-decoration: none;
 }
 
 .navbar .navbar-brand {
   color: #fff;
+  font-size: 24px;
 }
 
 
@@ -26,6 +28,7 @@
 
 .navbar.active .nav-link {
   color: #555;
+  font-size: 20px;
 }
 
 .navbar.active .nav-link:hover,
@@ -34,10 +37,17 @@
   text-decoration: none;
 }
 
-.navbar.active .navbar-brand {
+.navbar.active .navbar-brand, .navbar-brand:hover {
   color: #555;
 }
 
+.navbar-toggler {
+  color:black;
+}
+
+.navbar-toggler-right {
+  background-color:black;
+}
 
 /* Change navbar styling on small viewports */
 @media (max-width: 991.98px) {
@@ -88,6 +98,7 @@ form.login {
   margin-right: auto;
   margin-top: 15%;
   margin-bottom: 5%;
+  border-radius: 25px;
   position: static;
   opacity: 95%;
   background-color: white;
@@ -143,6 +154,8 @@ form.login {
   margin-top: 2%;
   width: 55%;
   border-style: solid;
+  border-width: 5px;
+  border-radius: 25px;
 }
 
 .gmap_canvas {
@@ -163,24 +176,27 @@ form.login {
 
 /*----TRIP PAGE----*/
 .tripPageCard {
-  width: 95%;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-  margin-top: 5%;
+ width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15%;
+  margin-bottom: 5%;
+  /* border-radius: 25px; */
+  position: static;
+  opacity: 95%;
+  background-color: white;
+  text-align: center;
 }
 
 #back2TripsBtn {
-  width: 50%;
-  margin-left: 5%;
-  margin-top: 5%;
+  float: left
 }
 
 .deleteBtn {
-  width: 25%;
-  margin-left: 70%;
-  margin-top: 5%;
-  text-align: center;
+  float: right
 }
+
+
 .background{
   background-image:url("bridge.jpg");
   background-repeat: no-repeat;
