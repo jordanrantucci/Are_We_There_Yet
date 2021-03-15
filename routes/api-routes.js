@@ -80,6 +80,20 @@ module.exports = function(app) {
     })
   })
 
+  app.put("/api/trip/:id", function(req, res) {
+    db.trips.update(req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+   ).then(function(data) {
+     res.send("Updated trip!")
+   }).catch((err) => {
+     console.log(err)
+   })
+  })
+
   app.get("/api/trip/:trip", function (req, res) {
     db.trips.findOne({
       where: {
@@ -101,6 +115,8 @@ module.exports = function(app) {
       where: {
         id: req.params.id,
       }
+    }).then(function(){
+      res.send("Trip deleted!")
     })
   })
   

@@ -34,6 +34,10 @@ module.exports = function(app) {
     }).then(function(result) {
       const trips = _.map(result, "dataValues")
       const tripObj = { trips: trips }
+      // {trips: result.map(data=>{
+      //  return data.dataValues
+      // })}
+      console.log(tripObj)
       res.render('partials/mytrips', tripObj)
     })
   });
