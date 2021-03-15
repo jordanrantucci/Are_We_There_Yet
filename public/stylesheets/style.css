@@ -193,9 +193,13 @@ form.login {
 }
 
 .deleteBtn {
-  float: right
+  float: right;
 }
 
+#editTripBtn {
+  float: right;
+  margin-left: 20px;
+}
 
 .background{
   background-image:url("/assets/bridge.jpg");

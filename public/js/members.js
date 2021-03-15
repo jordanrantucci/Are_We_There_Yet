@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  let editToggle = false;
+
   $(function () {
     $(window).on('scroll', function () {
         if ( $(window).scrollTop() > 10 ) {
@@ -34,10 +36,60 @@ $(document).ready(function() {
         'Content-Type': 'application/json',
       }
     })
-    .then(window.location.replace("/mytrips"));
+    .then(function(response) {
+      console.log("Trip deleted!");
+      window.location.replace("/mytrips");
+    });
   })
 
   $(".allTripBtn").on("click", function () {
     window.location.replace("/mytrips")
   })
+
+  $(".editTripBtn").on("click", function () {
+
+    if(editToggle) {
+      $(".display-box").toggleClass("d-none");
+      $(".edit-box").toggleClass("d-block");
+      editToggle = true;
+    } else {
+      $(".display-box").toggleClass("d-block");
+      $(".edit-box").toggleClass("d-none");
+      editToggle = false;
+    }
+  })
+  
+  $("#saveEditBtn").on("click", function(event) {
+    const id = event.target.dataset.id;
+
+   const newTripName = $("#tripNameEdit").val();
+   const newTripAttendees = $("#tripAttendeesEdit").val();
+   const newTripInfo = $("#tripInfoEdit").val();
+
+   const editedTrip = {
+     trip_name: newTripName,
+     attendees: newTripAttendees,
+     trip_info: newTripInfo
+   }
+
+  //  $.put(`/api/trip/${id}`, editedTrip)
+  //   .then(function(data) {
+  //     window.location.replace(`/mytrips/${id}`)
+  //   });
+
+  fetch(`/api/trip/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(editedTrip)
+  })
+  .then(function(response) {
+    window.location.replace(`/mytrips/${id}`)
+  });
+
+  })
+
 })
+
+
