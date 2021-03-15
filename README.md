@@ -13,9 +13,9 @@ Deployed application link: (https://arewethereyet.herokuapp.com)
 
 The following images demonstrate the application functionality:
 
-<img src = "./public/stylesheets/example.png">
-<img src = "./public/stylesheets/example2.png">
-<img src = "./public/stylesheets/example3.png">
+<img src = "/stylesheets/example.png">
+<img src = "/stylesheets/example2.png">
+<img src = "/stylesheets/example3.png">
 
 
 ## Table of Contents
