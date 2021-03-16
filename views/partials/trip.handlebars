@@ -3,7 +3,7 @@
 <!-- Navbar-->
 <header class="header">
     <nav class="navbar navbar-expand-lg fixed-top py-3">
-        <div class="container"><a href="/" class="navbar-brand">Are We There Yet?</a>
+        <div class="container nav-item"><h3 class="nav-link">Are We There Yet?</h3>
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
             
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
@@ -45,6 +45,30 @@
         <button class="btn btn-danger deleteBtn" data-id={{id}}>Delete Trip</button>
     </div>
 </container>
+
+<br>
+<section id="msgBoard">
+    <h2>Plan your trip together!</h2>
+    <button class="viewMsgs" name={{id}}>View Messages</button>
+    <br>
+    <br>
+    <container class="allMsgsDiv" id="allMsgsDiv">
+    </container>
+    <br>
+    <label for="writeMsg" class="form-label">Write a post:</label>
+    <form id="writeMsg" action="/api/posts" method="POST">
+     <textarea id="tripMsgBoard" name=
+    "tripMsgBoard" rows="4"></textarea>
+    <br>
+    <label for="author" class="form-label">Your name:</label>
+    <br>
+    <textarea id="author" rows="1"></textarea>
+    </form>
+   <button type="submit" class="submitPost" data-id={{id}}>Submit Post</button>
+</section>
+
+
 </body>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/members.js"></script>
+<script type="text/javascript" src="/js/message-board.js"></script>

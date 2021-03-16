@@ -5,18 +5,14 @@ module.exports = function (sequelize, DataTypes) {
         id: { 
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrament: true,
+            autoIncrement: true,
             primaryKey: true
         },
         body: {
             type: DataTypes.STRING(255)
         },
         trips_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: 'Trips',
-              key: 'id'
-          }
+            type: DataTypes.INTEGER
         }
     });
  

@@ -1,6 +1,3 @@
-// // Requiring path to so we can use relative routes to our HTML files
-// var path = require("path");
-
 var _ = require('lodash');
 const db = require("../models")
 // Requiring our custom middleware for checking if a user is logged in
@@ -14,7 +11,6 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/mytrips");
     }
-    // res.sendFile(path.join(__dirname, "login"));
     res.render('partials/login')
   });
 
@@ -24,7 +20,6 @@ module.exports = function(app) {
       res.redirect("/mytrips");
 
     }
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render('partials/login')
   });
 
@@ -34,10 +29,6 @@ module.exports = function(app) {
     }).then(function(result) {
       const trips = _.map(result, "dataValues")
       const tripObj = { trips: trips }
-      // {trips: result.map(data=>{
-      //  return data.dataValues
-      // })}
-      console.log(tripObj)
       res.render('partials/mytrips', tripObj)
     })
   });
@@ -56,17 +47,27 @@ module.exports = function(app) {
     db.trips.findOne({
       where: {
         id: req.params.trip
-      }
-    }).then(function (data){
-        const trip = {}
-        Object.assign(trip, data.dataValues)
-        console.log(data.dataValues)
-        console.log(trip)
-    //      const trip={id: req.params.trip}
-    res.render("partials/trip", trip)
+      } 
+    })
+    .then(function (data){
+      const trip = {}
+      Object.assign(trip, data.dataValues)
+      res.render("partials/trip", trip)
     })
   })
 
+  app.get("/mytrips/:trip", function(req, res) {
+    db.posts.findAll({
+      where: {
+        trips_id: req.params.trip
+      } 
+    })
+    .then(function (data){
+      const trip = {}
+      Object.assign(trip, data.dataValues)
+      res.render("partials/trip", trip)
+    })
+  })
 
   app.delete("/mytrips/:trip", function(req, res) {
     db.trips.findOne({

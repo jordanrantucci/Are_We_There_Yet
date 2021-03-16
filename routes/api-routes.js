@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var _ = require('lodash');
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -47,7 +48,7 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        trips_id: req.user.trips_id //this is a foreign key referencing the 'people' table- shows up as null. correct syntax for this?
+        trips_id: req.user.trips_id //this is a foreign key referencing the 'people' table
       });
     }
   });
@@ -72,9 +73,10 @@ module.exports = function(app) {
       },
       {
         where: {id: req.user.id}
-      }).then(function() {
-            res.redirect("/mytrips");
-          })
+      })
+      .then(function() {
+        res.redirect("/mytrips");
+      })
     })
   })
 
@@ -118,4 +120,33 @@ module.exports = function(app) {
     })
   })
   
+
+  //----MESSAGEBOARD POSTS----
+  app.get('/api/posts/:trips_id', (req, res) => {
+    db.posts.findAll({
+      where: {
+        trips_id: req.params.trips_id
+      }
+    }).then(function(result) {
+      const post = _.map(result,"dataValues")
+      const postObj = { posts: post }
+      res.json(postObj)
+    })
+  })
+
+  app.get('/api/posts', (req, res) => {
+    db.posts.findAll({
+    }).then(function(result) {
+      const post = _.map(result,"dataValues")
+      const postObj = { posts: post }
+      res.json(postObj)
+    })
+  })
+
+  app.post("/api/posts/:id", (req, res) => {
+    db.posts.create({
+      body: req.body.body,
+      trips_id: req.body.trips_id
+    })
+  })
 }
