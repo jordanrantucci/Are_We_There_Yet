@@ -30,7 +30,7 @@ The following images demonstrate the application functionality:
 
 ## Installation
 
-If downloading from the repository a user must have node installed.  They can downlaod the technologies used by running npm install from the command line.
+If downloading from the repository a user must have node installed.  They can download the technologies used by running npm install from the command line.
 
 
 ## Usage 
