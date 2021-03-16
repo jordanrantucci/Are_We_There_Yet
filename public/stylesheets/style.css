@@ -188,10 +188,19 @@ form.login {
   
 }
 
+.allMsgsDiv {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
 .viewMsgs {
   background: transparent;
   border: none !important;
   font-size:0;
+}
+
+#tripMsgBoard {
+  width: 50%;
 }
 
 #msgBoard {
