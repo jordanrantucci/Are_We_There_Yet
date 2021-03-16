@@ -27,7 +27,6 @@ $(document).ready(function() {
   let allMsgs;
   $(".viewTripBtn").on("click", function (event) {
     id = event.target.dataset.id
-    //console.log(id)
     window.location.replace(`/mytrips/${id}`) 
   })
 
@@ -44,10 +43,8 @@ $(document).ready(function() {
       .then((data) => {
         
         for (i=0; i<data.posts.length; i++) {
-          // console.log(data.posts[i].body)
           let allMsgs = data.posts[i].body
           $("#allMsgsDiv").append(allMsgs)
-          // console.log(allMsgs)
           let p = document.createElement('p')
           $("#allMsgsDiv").append(p)
         }
@@ -121,11 +118,6 @@ $(document).ready(function() {
      attendees: newTripAttendees,
      trip_info: newTripInfo
    }
-
-  //  $.put(`/api/trip/${id}`, editedTrip)
-  //   .then(function(data) {
-  //     window.location.replace(`/mytrips/${id}`)
-  //   });
 
   fetch(`/api/trip/${id}`, {
     method: 'PUT',

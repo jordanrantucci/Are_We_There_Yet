@@ -48,7 +48,7 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        trips_id: req.user.trips_id //this is a foreign key referencing the 'people' table- shows up as null. correct syntax for this?
+        trips_id: req.user.trips_id //this is a foreign key referencing the 'people' table
       });
     }
   });
@@ -110,7 +110,7 @@ module.exports = function(app) {
   })
 })
 
-  app.delete('/api/trip/:trips_id', (req, res) => {
+  app.delete('/api/trip/:id', (req, res) => {
     db.trips.destroy({
       where: {
         id: req.params.id,
@@ -149,13 +149,4 @@ module.exports = function(app) {
       trips_id: req.body.trips_id
     })
   })
-
-  app.delete('/api/posts/:id', (req, res) => {
-    db.trips.destroy({
-      where: {
-        id: req.params.id,
-      }
-    })
-  })
-
 }

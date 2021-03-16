@@ -1,6 +1,3 @@
-// // Requiring path to so we can use relative routes to our HTML files
-// var path = require("path");
-
 var _ = require('lodash');
 const db = require("../models")
 // Requiring our custom middleware for checking if a user is logged in
@@ -14,7 +11,6 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/mytrips");
     }
-    // res.sendFile(path.join(__dirname, "login"));
     res.render('partials/login')
   });
 
@@ -24,7 +20,6 @@ module.exports = function(app) {
       res.redirect("/mytrips");
 
     }
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render('partials/login')
   });
 
@@ -34,10 +29,6 @@ module.exports = function(app) {
     }).then(function(result) {
       const trips = _.map(result, "dataValues")
       const tripObj = { trips: trips }
-      // {trips: result.map(data=>{
-      //  return data.dataValues
-      // })}
-      console.log(tripObj)
       res.render('partials/mytrips', tripObj)
     })
   });
@@ -78,47 +69,6 @@ module.exports = function(app) {
     })
   })
 
-
-  // app.get("/mytrips/:trip", (function(req, res){
-  //   db.posts.findAll({
-  //     where: {
-  //       id: req.params.trips_id
-  //     }
-  //   }).then(function(data) {
-  //     // let post = {}
-  //     // Object.assign(post, data.dataValues)
-  //     // console.log(post)
-  //     // res.json({result})
-  //     // const posts = _.map(result,"dataValues")
-  //     // const postObj = { posts: posts}
-  //     // console.log(postObj)
-  //       const post = {}
-  //       Object.assign(post, data.dataValues)
-  //     res.render("partials/trip", post)
-  //   })
-    // .then(function(data){
-      // const post = {}
-      // Object.assign(post, data.dataValues)
-      // // res.render("partials/trip", post)
-  
-    // })
-    
-    // .then(function(data) {
-    //   console.log(data)
-    // })
-  // }))
-
-
-  // app.get("/mytrips/:trip", function(req, res) {
-  //   db.posts.findAll({
-  //     where: {
-  //       id:req.params.trips_id
-  //     }
-  //   }).then(function(data){
-  //     console.log(data)
-  //   })
-  // })
-
   app.delete("/mytrips/:trip", function(req, res) {
     db.trips.findOne({
       where: {
@@ -126,17 +76,6 @@ module.exports = function(app) {
       }
     }).then(function () {
       res.redirect("/mytrips")
-    })
-  })
-
-  
-  app.delete("/mytrips/:trip", function(req, res) {
-    db.posts.findOne({
-      where: {
-        id: req.params.post
-      } 
-    }).then(function () {
-      location.reload()
     })
   })
 };

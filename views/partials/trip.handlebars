@@ -3,7 +3,7 @@
 <!-- Navbar-->
 <header class="header">
     <nav class="navbar navbar-expand-lg fixed-top py-3">
-        <div class="container"><a href="/" class="navbar-brand">Are We There Yet?</a>
+        <div class="container nav-item"><h3 class="nav-link">Are We There Yet?</h3>
             <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
             
             <div id="navbarSupportedContent" class="collapse navbar-collapse">
@@ -31,6 +31,21 @@
 
     </ul>
 </div>
+
+<container class="row1">
+    <div class="col-xs-4 text-left">
+        <button type="submit" class="btn btn-primary allTripBtn" id="back2TripsBtn">Back to All Trips</button>
+        </div>
+        
+         <div class="col-xs-4 text-center">
+        <button type="submit" class="btn btn-primary editTripBtn" id="editTripBtn">Edit Trip</button>
+        </div>
+        
+    <div class="col-xs-4 text-right">
+        <button class="btn btn-danger deleteBtn" data-id={{id}}>Delete Trip</button>
+    </div>
+</container>
+
 <br>
 <section id="msgBoard">
     <h2>Plan your trip together!</h2>
@@ -52,19 +67,7 @@
    <button type="submit" class="submitPost" data-id={{id}}>Submit Post</button>
 </section>
 
-<container class="row1">
-    <div class="col-xs-4 text-left">
-        <button type="submit" class="btn btn-primary allTripBtn" id="back2TripsBtn">Back to All Trips</button>
-        </div>
-        
-         <div class="col-xs-4 text-center">
-        <button type="submit" class="btn btn-primary editTripBtn" id="editTripBtn">Edit Trip</button>
-        </div>
-        
-    <div class="col-xs-4 text-right">
-        <button class="btn btn-danger deleteBtn" data-id={{id}}>Delete Trip</button>
-    </div>
-</container>
+
 </body>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/members.js"></script>

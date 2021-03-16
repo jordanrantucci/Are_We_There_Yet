@@ -12,11 +12,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(255)
         },
         trips_id: {
-            type: DataTypes.INTEGER,
-            // references: {
-            //   model: 'Trips',
-            //   key: 'id'
-        //   }
+            type: DataTypes.INTEGER
         }
     });
  

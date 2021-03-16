@@ -40,12 +40,5 @@ db.users = require('./user.js')(sequelize, Sequelize)
 
 db.posts = require('./post.js')(sequelize, Sequelize)
 
-//Relations
-
-// db.posts.belongsTo(db.trips)
-// db.users.belongsToMany(db.trips)
-// // db.trips.hasMany(db.users, {onDelete: "CASCADE", onUpdate: "CASCADE"})
-// db.trips.hasMany(db.posts)
-
 
 module.exports = db;
